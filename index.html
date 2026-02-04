@@ -65,13 +65,27 @@
         const noBtn = document.getElementById("noBtn");
         const yesBtn = document.getElementById("yesBtn");
         const videoContainer = document.getElementById("videoContainer");
+        const phrases = [
+          "Are you sure? 😅",
+          "Think again! 😜",
+          "No way! 💔",
+          "Try again 😉",
+          "Don't be shy! ❤️"
+        ];
+
 
         noBtn.addEventListener("mouseover", () => {
+            // Move button
             const x = Math.random() * (window.innerWidth - 150);
             const y = Math.random() * (window.innerHeight - 100);
             noBtn.style.left = x + "px";
             noBtn.style.top = y + "px";
+
+            // Pick a random phrase
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            noBtn.innerText = phrases[randomIndex];
         });
+
 
         yesBtn.addEventListener("click", () => {
             document.querySelector("h1").innerText = "I knew it! 💖";
