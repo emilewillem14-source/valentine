@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine 💖</title>
+    <style>
+        body {
+            background-color: #ffe6eb;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 80px;
+            font-size: 40px;
+            color: #d6336c;
+        }
+
+        button {
+            font-size: 22px;
+            padding: 15px 30px;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #adb5bd;
+            position: absolute;
+        }
+
+        #videoContainer {
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Do you love me? ❤️</h1>
+
+    <button id="yesBtn">Yes 💕</button>
+    <button id="noBtn">No 😒</button>
+
+    <div id="videoContainer" style="display:none; text-align:center; margin-top:30px;">
+        <h2>Something special for you 💌</h2>
+        <iframe width="600" height="340"
+            src="https://www.youtube.com/embed/diG8n_HsSJ8?start=53&autoplay=1&mute=1&rel=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+        const yesBtn = document.getElementById("yesBtn");
+        const videoContainer = document.getElementById("videoContainer");
+
+        noBtn.addEventListener("mouseover", () => {
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 100);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+
+        yesBtn.addEventListener("click", () => {
+            document.querySelector("h1").innerText = "I knew it! 💖";
+            noBtn.style.display = "none";
+            yesBtn.style.display = "none";
+            videoContainer.style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
